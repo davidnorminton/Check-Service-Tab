@@ -6,8 +6,8 @@ from email.MIMEMultipart import MIMEMultipart
 from email.MIMEText import MIMEText
  
  
-fromaddr = "cscateringerrors@gmail.com"
-toaddr = "marketing@caffesociety.co.uk"
+fromaddr = ""
+toaddr = ""
 msg = MIMEMultipart('alternative')
 msg['From'] = fromaddr
 msg['To'] = toaddr
@@ -18,7 +18,7 @@ msg.attach(MIMEText(body, 'html'))
  
 server = smtplib.SMTP('smtp.gmail.com', 587)
 server.starttls()
-server.login(fromaddr, "F1ft33np3nc3")
+server.login(fromaddr, SMTP_PASSWORD_GOES_HERE)
 text = msg.as_string()
 server.sendmail(fromaddr, toaddr, text)
 server.quit()
